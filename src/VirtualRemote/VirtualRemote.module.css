@@ -1,0 +1,69 @@
+/* VirtualRemote.module.css */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  max-width: 90%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.virtualRemote {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.remoteButton {
+  padding: 10px;
+  background: lightgray;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remoteButton.mapped {
+  background: green;
+  color: white;
+}
+
+.remoteButton.mapped:hover {
+  background: #006400;
+  cursor: default;
+  transform: scale(1.05);
+}
+
+.closeButton {
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: #8b0000;
+  transform: scale(1.05);
+}
+
+.remoteButton:not(.mapped):hover {
+  background: lightgrey;
+  cursor: default;
+  transform: scale(1.00);
+}

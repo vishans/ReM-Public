@@ -1,0 +1,254 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 12% auto;
+  /* overflow: hidden; */
+}
+
+.title {
+  grid-row: 1 / 2; /* This places the navbar in the first row */
+  background-color: #f5f5f5; /* Example background color for the navbar */
+  color: white; /* Example text color for the navbar */
+  display: flex; /* Flexbox for horizontal layout of navbar items */
+  align-items: center; /* Center items vertically */
+  justify-content: left;
+  font-size: 40px; /* Example font size */
+  color: #333;
+  padding: 0 40px;
+  grid-column: 1/2;
+}
+
+.logout-button {
+  grid-row: 1 / 2; /* This places the navbar in the first row */
+  /* background-color: red;  */
+  background-color: #f5f5f5;
+  grid-column: 1/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 30px;
+  width: 5vw;
+  cursor: pointer;
+  user-select: none;
+  justify-self: end;
+}
+
+.logout-button:hover {
+  background-color: #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.main-content {
+  grid-row: 2 / 3;
+  /* background-color: #F5F5F5; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.cards-holder {
+  grid-row: 1/4;
+  grid-column: 1/4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  grid-row: 3 / 4;
+  grid-column: 3 / 4;
+  /* background-color: red; */
+}
+
+.button-holder button {
+  background-color: #4a90e2;
+  height: 5vw;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: white;
+  font-size: 20px;
+  border: none;
+}
+
+.button-holder button:hover {
+  background-color: #357abd; /* Darker shade of blue */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000;
+}
+
+/* Popup container */
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.setup-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 65vw;
+  min-height: 80vh;
+}
+
+/* Show the overlay and popup */
+.show-overlay {
+  display: flex;
+}
+
+.info-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 33vw;
+  min-height: 20vh;
+}
+
+.info-popup h2 {
+  align-self: flex-start;
+  padding-bottom: 15px;
+}
+
+.info-popup button {
+  align-self: flex-end;
+  padding: 7px 10px;
+  margin: 5px;
+  margin-top: 20px;
+  width: 8vw;
+
+  aspect-ratio: 2.8/1;
+  margin: 15px 0;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.info-popup button:hover {
+  background-color: #357abd; /* Darker shade of blue */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.username:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .hero .title {
+    font-size: 4vh;
+    padding: 0 20px;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .button-holder {
+    padding: 10px;
+  }
+
+  .button-holder button {
+    width: 100%;
+    transform: scale(1.2);
+    font-size: 2vh;
+    padding: 5px;
+  }
+
+  .info-popup {
+    width: 80vw;
+  }
+
+  .info-popup button {
+    width: 20vw;
+    font-size: 14px;
+  }
+
+  .setup-window {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+  .button-holder {
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+    margin-top: 25vh;
+  }
+
+  .button-holder button {
+    height: 7vh;
+    font-size: 1.5vh;
+    align-self: center;
+    justify-self: center;
+    width: 30vw;
+  }
+
+  .info-popup button {
+    width: 25vw;
+    font-size: 12px;
+  }
+
+  .setup-window {
+    width: 95vw;
+  }
+
+  .cards-holder {
+    grid-row: 1/4;
+    grid-column: 1/4;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }  
+
+  .main-content {
+    grid-row: 2 / 3;
+    /* background-color: #F5F5F5; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* height:200vh; */
+    
+  }
+  
+}

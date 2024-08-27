@@ -1,0 +1,270 @@
+/* SetupWizard.module.css */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 70vw;
+  height: 75vh;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.step1 form {
+  height: 50%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.step1 button {
+  padding: 7px 10px;
+  margin: 5px;
+  margin-top: 20px;
+  height: 8%;
+
+  aspect-ratio: 3/1;
+  margin: 15px 0;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.step1 button:hover {
+  background-color: #357abd; /* Darker shade of blue */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.step1 label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.step1 input {
+  height: 5vh;
+  width: 100%;
+  padding: 1px 3px;
+}
+
+.step2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.virtualRemote {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  
+
+  width: 50%;
+}
+
+.remoteButton {
+  padding: 10px;
+  background: lightgray;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.remoteButton:hover{
+  background-color: gray;
+  transform: scale(1.05);
+}
+
+.remoteButton.mapped {
+  background: green;
+  color: white;
+}
+
+.remoteButton.mapped:hover {
+  background: #006400;
+  transform: scale(1.05);
+}
+
+.finishButton {
+  padding: 7px 10px;
+  margin: 5px;
+  margin-top: 20px;
+  height: 8%;
+
+  aspect-ratio: 3/1;
+  margin: 15px 0;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.finishButton:hover {
+  background-color: #357abd; /* Darker shade of blue */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.button-overlay {
+  display: flex;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000000;
+}
+
+.button-overlay .button-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 60vw;
+  height: 65vh;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button-popup .content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.content input {
+  margin: 20px 0;
+  width: 15vw;
+  aspect-ratio: 3/0.5;
+}
+
+.button-popup .button-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.button-container button {
+  padding: 7px 10px;
+  margin: 5px;
+  margin-top: 20px;
+
+  width: 8vw;
+
+  margin: 15px 0;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-container button.deleteBtn{
+  background-color: red;
+}
+
+.button-container button.deleteBtn:hover{
+  background-color: #8B0000 ;
+  transform: scale(1.05);
+}
+
+.step1 button:hover {
+  background-color: #357abd; /* Darker shade of blue */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.button-container .disable {
+  background-color: #ccc; /* Gray background */
+  color: #666; /* Gray text */
+  cursor: not-allowed; /* Change cursor to not-allowed */
+  pointer-events: none; /* Disable pointer events */
+  opacity: 0.6;
+}
+
+.buttonContainer {
+  padding: 0;
+  height: fit-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 80%;
+}
+
+.buttonContainer button {
+  background-color: #4a90e2;
+  height: 7vh;
+}
+
+ /* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .buttonContainer button {
+    background-color: #4a90e2;
+    height: 4.75vh;
+  }
+
+  .button-container button{
+    width: fit-content;
+  }
+
+  .virtualRemote {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    
+  
+    width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+}
