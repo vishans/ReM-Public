@@ -18,6 +18,10 @@ Imagine transforming your $15 fan into a smart device you can control with just 
 
 ### How It Works with ESP32 👾
 
+<p align="center">
+  <img src="repo/assets/Hardware%20Connection.png" alt="Hardware Connection Diagram">
+</p>
+
 The heart of ReM is the ESP32 microcontroller. This powerful and affordable device connects to your Wi-Fi network, communicates with the server, and sends IR signals to your appliances. The ESP32 is the bridge that transforms your ordinary appliances into smart devices!
 
 
