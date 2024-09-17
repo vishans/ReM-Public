@@ -1,6 +1,8 @@
 # ReM
 
-![ReM Logo](repo/assets/Logo.png)
+<p align="center">
+  <img src="repo/assets/Logo.png" alt="ReM Logo">
+</p>
 
 Turn your ordinary IR appliances into smart devices and bring the power of convenience to your home with ReM!
 
