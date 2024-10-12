@@ -54,17 +54,7 @@ void setup()
   irsend.begin();
   // irrecv.enableIRIn();  // Start the receiver
 
-  // Connect to Wi-Fi
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    digitalWrite(ledPin, HIGH);  
-    delay(100);      
-    digitalWrite(ledPin, LOW); 
-    delay(100);
-  }
-
-  digitalWrite(ledPin, LOW); // Turn off the LED once connected
+  connectToWiFi();
 }
 
 void loop()
@@ -138,6 +128,9 @@ void loop()
 #endif
 
     http.end();
+  }
+  else{
+    connectToWiFi();
   }
 
   // Handle IR receiving if in receive mode
@@ -229,4 +222,21 @@ void sendReceivedIRCode(decode_type_t protocol, uint32_t value, uint16_t bits)
 
     http.end();
   }
+}
+
+
+void connectToWiFi() 
+{
+    unsigned int t = millis();
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED && (millis() - t) < 10000)
+    {
+      digitalWrite(ledPin, HIGH);  
+      delay(100);      
+      digitalWrite(ledPin, LOW); 
+      delay(100);
+    }
+
+    digitalWrite(ledPin, LOW); // Turn off the LED once connected
+
 }
